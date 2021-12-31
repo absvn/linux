@@ -1,0 +1,28 @@
+## Realtek RTL8852AE WiFi 6 802.11ax PCIe Adapter
+
+Now that you have installed the prerequisites successfully by tethering, let's install the driver. It can all be done from the terminal!
+
+Type these commands in terminal
+
+git clone https://github.com/lwfinger/rtw89.git
+cd rtw89
+make
+sudo make install
+sudo modprobe rtw89pci
+
+Your wireless should now be working.
+
+
+
+
+
+When Update Manager offers and installs a later kernel version, also known as linux-image, after the requested reboot, you must rebuild the driver:
+
+cd rtw89
+make clean
+git pull
+make
+sudo make install
+sudo modprobe rtw89pci
+
+Please retain the rtw89pci directory and these instructions for that time.
